@@ -1,0 +1,1 @@
+I'm following my path to becoming an exceptional frontend developer and this is by constant practicing of code, in this projects mostly with plain js before I dive into frameworks and libraries. I want to focus on the different aspects of frontend development.
