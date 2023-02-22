@@ -68,6 +68,7 @@ body {
   .menu__sub {
     height: 18rem;
     background: white;
+    display: none;
   }
   
   .menu__sub__categories {
