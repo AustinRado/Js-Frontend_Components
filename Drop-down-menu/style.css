@@ -39,6 +39,7 @@ body {
     margin-right: 0;
   }
   
+  .menu__main__item--active,
   .menu__main__item:hover {
     background: white;
     border-bottom: none;
