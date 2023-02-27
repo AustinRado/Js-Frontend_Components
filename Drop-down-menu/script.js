@@ -48,7 +48,7 @@ function showSubmenu() {
   
   const menu = document.getElementsByClassName("menu")[0];
   menu.onmouseleave = hideSubmenu;
-  //for...of The for...of statement executes a loop that operates on a sequence of values sourced from an iterable object.
+  //..for...of The for...of statement executes a loop that operates on a sequence of values sourced from an iterable object.
   //this include instances of built-ins such as Array, String, TypedArray, Map, Set, NodeList (and other DOM collections), as well as the arguments object, generators produced by generator functions, and user-defined iterables.
 /*the use of the () => syntax just creates a function within the body as everything after the arrow. It’s the equivalent of
 function() {
