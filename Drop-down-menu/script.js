@@ -24,15 +24,7 @@ function showSubmenu() {
     populateCategories('top');
     populateCategories('additional');
   }
-  
-  function showSubmenu() {
-    const submenu = document.getElementsByClassName("menu__sub")[0];
-    submenu.style.display = "block";
-  
-    populateCategories('top');
-    populateCategories('additional');
-  }
-  
+
   function hideSubmenu() {
     const submenu = document.getElementsByClassName("menu__sub")[0];
     submenu.style.display = "none";
@@ -42,11 +34,11 @@ function showSubmenu() {
   
   function onMenuItemMouseEnter(item) {
     if (activeMenuItem ) {
-      activeMenuItem .classList.remove("menu__main__item--active");
+      activeMenuItem .classList.toggle("menu__main__item--active");
     }
     activeMenuItem = item;
     item.classList.add("menu__main__item--active");
-    showSubmenu();
+   showSubmenu();
   }
   
   const menuItems = document.getElementsByClassName("menu__main__item");
