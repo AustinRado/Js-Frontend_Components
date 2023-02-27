@@ -126,3 +126,16 @@ Finally, it calls the callback function with the response from the appropriate e
 const api = {
   get: getFunction
 };
+/*
+This code declares an object named api with a single method named get, which is assigned the value of the getFunction function.
+
+In JavaScript, an object is a collection of key-value pairs, where the keys are strings and the values can be any JavaScript value, including functions. The syntax for declaring an object literal is { key1: value1, key2: value2, ... }.
+
+In this case, the api object has a single key-value pair, where the key is 'get' and the value is the getFunction function. This means that the api object can be used to call the getFunction function as follows:
+
+api.get(url, data, callback);
+
+where url is the URL of the endpoint to call, data is any data to send with the request (e.g., query parameters or request body), and callback is a function to call with the response.
+
+By defining the api object in this way, the code can encapsulate the details of how to make an API call, such as constructing the URL, formatting the request data, and handling the response, behind a simple interface. This can make it easier to write and maintain code that relies on the API, as well as facilitate reuse of the API integration code across different parts of an application.
+*/
