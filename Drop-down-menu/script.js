@@ -1,7 +1,8 @@
 const HOST = 'server.com/';
 
 function populateCategories(category) {
-  api.get(HOST + 'categories', {category}, function(categories) {
+  const activeMenuItemName = activeMenuItem.children[0].innerHTML;
+  api.get(HOST + 'categories', {category, menuItem: activeMenuItemName}, function(categories) {
     let newCategories = '';
     for (const category of categories) {
       const categoryElement = `
@@ -37,13 +38,13 @@ function showSubmenu() {
     submenu.style.display = "none";
   }
   
-  let active = null;
+  let activeMenuItem = null;
   
   function onMenuItemMouseEnter(item) {
-    if (active) {
-      active.classList.remove("menu__main__item--active");
+    if (activeMenuItem ) {
+      activeMenuItem .classList.remove("menu__main__item--active");
     }
-    active = item;
+    activeMenuItem = item;
     item.classList.add("menu__main__item--active");
     showSubmenu();
   }
@@ -84,26 +85,58 @@ The getFunction() function is used to handle GET requests. It takes the URL, dat
 */
 
 //SERVER
-
-function getCategories(data){
-  if (data.category == 'top'){
-    return[
+function getCategories(data) {
+  if (data.category == 'top') {
+    if (data.menuItem == 'Motors') {
+      return [
+        'Car',
+        'Motorcycle',
+        'Plane',
+        'Trucks',
+        'Wheels'
+      ];
+    }
+    if (data.menuItem == 'Fashion') {
+      return [
+        'Women\'s tops',
+        'Men\'s tops',
+        'Jeans',
+        'Hats'
+      ];
+    }
+    return [
       'Server apple',
       'Server banana',
       'Server pear',
       'Server orange'
-    ]
+    ];
   }
-  if (data.category == 'additional'){
-    return[
+  if (data.category == 'additional') {
+    if (data.menuItem == 'Motors') {
+      return [
+        'Tires',
+        'Windshields',
+        'Ski racks',
+        'Doors',
+        'Windows'
+      ];
+    }
+    if (data.menuItem == 'Fashion') {
+      return [
+        'On sale',
+        'Red stuff',
+        'Gucci',
+        'New Arrivals'
+      ];
+    }
+    return [
       'Server square',
-    'Server circe',
-    'Server oval',
-    'Server diamond'
-    ]
+      'Server circle',
+      'Server oval',
+      'Server diamond'
+    ];
   }
-  return[];
-  //
+  return [];
 }
 
 const endpoints = {
